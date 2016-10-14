@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+       <!-- 扫描器 -->
+    <context:component-scan base-package="com.jd.websocket"></context:component-scan>
+   <!-- &lt;!&ndash; 注解映射器&ndash;&gt;
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"></bean>
+    &lt;!&ndash; 注解适配器&ndash;&gt;
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>-->
+    <!-- 使用注解代替上面的映射器和适配器-->
+    <context:annotation-config />
+
+    <mvc:annotation-driven ></mvc:annotation-driven>
+
+    <!-- 视图解析器
+	解析jsp解析，默认使用jstl标签，classpath下的得有jstl的包
+	 -->
+    <!--<bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        &lt;!&ndash; 配置jsp路径的前缀 &ndash;&gt;
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        &lt;!&ndash; 配置jsp路径的后缀 &ndash;&gt;
+        <property name="suffix" value=".jsp"/>
+    </bean>-->
+</beans>
